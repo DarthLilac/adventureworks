@@ -1,0 +1,19 @@
+
+version: 2
+
+sources:
+
+  - name: adventureworks_project
+    description: Adventureworks database, extract by Fivetran.
+    database: adventureworks_database
+    schema: raw_adventureworks_person
+    tables:
+      - name: address
+        description: address information.
+        columns:
+          - name: addressid
+            description: address id, PK
+          - name: city
+            description: city name
+          - name: postalcode
+            description: postal code
