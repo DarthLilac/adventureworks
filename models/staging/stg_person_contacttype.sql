@@ -8,7 +8,7 @@ with
     contact_type as (
         select
             contacttypeid as contact_type_id
-            , name
+            , name as contact_type_name
             , date (modifieddate) as modified_date
 
         from adventureworks_database.raw_adventureworks_person.contacttype
