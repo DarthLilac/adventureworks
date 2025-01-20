@@ -24,7 +24,7 @@ with
             , round (totaldue, 2) as total_due
             , date (modifieddate) as modified_date
 
-        from adventureworks_database.raw_adventureworks_sales.salesorderheader
+        from {{ source('raw_adventureworks_sales','salesorderheader') }}
     )
 
 select *

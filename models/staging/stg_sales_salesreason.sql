@@ -12,7 +12,7 @@ with
             , reasontype as reason_type
             , date (modifieddate) as modified_date
 
-        from adventureworks_database.raw_adventureworks_sales.salesreason
+        from {{ source('raw_adventureworks_sales','salesreason') }}
     )
 
 select *

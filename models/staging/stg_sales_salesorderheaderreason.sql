@@ -11,7 +11,7 @@ with
             , salesreasonid as sales_reason_id
             , date (modifieddate) as modified_date
 
-        from adventureworks_database.raw_adventureworks_sales.salesorderheadersalesreason
+        from {{ source('raw_adventureworks_sales','salesorderheaderreason') }}
     )
 
 select *

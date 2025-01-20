@@ -16,7 +16,7 @@ with
             , saleslastyear as sales_last_year
             , date (modifieddate) as modified_date
 
-        from adventureworks_database.raw_adventureworks_sales.salesperson
+        from {{ source('raw_adventureworks_sales','salesperson') }}
     )
 
 select *

@@ -14,7 +14,7 @@ with
             , territoryid as territory_id
             , date (modifieddate) as modified_date
 
-        from adventureworks_database.raw_adventureworks_person.stateprovince
+        from {{ source('raw_adventureworks_person','stateprovince') }}
     )
 
 select *

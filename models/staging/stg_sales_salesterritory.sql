@@ -15,7 +15,7 @@ with
             , costytd as cost_ytd
             , date (modifieddate) as modified_date
 
-        from adventureworks_database.raw_adventureworks_sales.salesterritory 
+        from {{ source('raw_adventureworks_sales','salesterritory') }}
     )
 
 select *

@@ -11,7 +11,7 @@ with
             , name as product_category_name
             , date (modifieddate) as modified_date
 
-        from adventureworks_database.raw_adventureworks_production.productcategory
+        from {{ source('raw_adventureworks_production','productcategory') }}
     )
 
 select *

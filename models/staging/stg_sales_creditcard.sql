@@ -14,7 +14,7 @@ with
             , expyear as exp_year
             , date (modifieddate) as modified_date
 
-        from adventureworks_database.raw_adventureworks_sales.creditcard
+        from {{ source('raw_adventureworks_sales','creditcard') }}
     )
 
 select *
