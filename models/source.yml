@@ -3,7 +3,7 @@ version: 2
 
 sources:
 
-  - name: adventureworks_project
+  - name: raw_adventureworks_person
     description: Adventureworks database, extract by Fivetran.
     database: adventureworks_database
     schema: raw_adventureworks_person
@@ -13,7 +13,16 @@ sources:
         columns:
           - name: addressid
             description: address id, PK
+          - name: stateprovinceid
+            description: state province id
+          - name: adressline1
+            description: address information
+          - name: addressline2
+            description: address complement
           - name: city
             description: city name
           - name: postalcode
             description: postal code
+          - name: modifieddate
+            description: last modified date
+      - name: 

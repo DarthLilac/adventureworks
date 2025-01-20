@@ -22,7 +22,7 @@ with
             , postalcode as postal_code
             , date (modifieddate) as modified_date
 
-        from adventureworks_database.raw_adventureworks_person.address
+        from {{ source('raw_adventureworks_person','address') }}
     )
 
 select *
