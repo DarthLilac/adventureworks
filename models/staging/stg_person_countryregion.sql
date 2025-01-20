@@ -11,7 +11,7 @@ with
             , name as country_region_name
             , date (modifieddate) as modified_date
 
-        from adventureworks_database.raw_adventureworks_person.countryregion
+        from {{ source('raw_adventureworks_person','countryregion') }}
     )
 
 select *

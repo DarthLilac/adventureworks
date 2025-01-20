@@ -4,7 +4,7 @@ version: 2
 sources:
 
   - name: raw_adventureworks_person
-    description: Adventureworks database, extract by Fivetran.
+    description: person schema from adventureworks database, extract by Fivetran.
     database: adventureworks_database
     schema: raw_adventureworks_person
     tables:
@@ -25,4 +25,65 @@ sources:
             description: postal code
           - name: modifieddate
             description: last modified date
-      - name: 
+      - name: businessentity
+        description: business entity id
+        columns:
+          - name: businessentityid
+            description: business entity id
+          - name: modifieddate
+            description: last modified date
+      - name: businessentityaddress
+        description: business entity address
+        columns:
+          - name: businessentityid
+            description: business entity id
+          - name: addressid
+            description: address id
+          - name: addresstypeid
+            description: address type id
+          - name: modifieddate
+            description: last modified date
+      - name: businessentitycontact
+        description: business entity contact information
+        columns:
+          - name: businessentityid
+            description: business entity id
+          - name: contacttypeid
+            description: contact type id
+          - name: personid
+            description: person id
+          - name: modifieddate
+            description: last modified date
+      - name: contacttype
+        description: business entity contact information
+        columns:
+          - name: contacttypeid
+            description: contact type id
+          - name: name
+            description: contact type name
+          - name: modifieddate
+            description: last modified date
+      - name: countryregion
+        description: country region information
+        columns:
+          - name: countryregioncode
+            description: country region code
+          - name: name
+            description: country region name
+          - name: modifieddate
+            description: last modified date
+      - name: person
+        description: country region information
+        columns:
+          - name: businessentityid
+            description: business entity id
+          - name: persontype
+            description: person type
+          - name: firstname
+            description: first name
+          - name: middlename
+            description: middle name
+          - name: lastname
+            description: last name
+          - name: modifieddate
+            description: last modified date
