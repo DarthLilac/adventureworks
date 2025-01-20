@@ -10,6 +10,7 @@ with
             salesorderdetailid as sales_orderdetail_id
             , salesorderid as sales_order_id
             , orderqty as order_qty
+            , productid as product_id
             , round (unitprice, 2) as unit_price
             , specialofferid as special_offer_id
             , unitpricediscount as unit_price_discount

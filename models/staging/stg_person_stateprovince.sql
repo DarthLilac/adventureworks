@@ -8,9 +8,9 @@ with
     state_province as (
         select
             stateprovinceid as stateprovince_id
-            , stateprovincecode as state_province_code
+            , stateprovincecode as stateprovince_code
             , countryregioncode as country_region_code
-            , name as state_province_name
+            , name as stateprovince_name
             , territoryid as territory_id
             , date (modifieddate) as modified_date
 
