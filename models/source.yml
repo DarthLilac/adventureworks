@@ -13,8 +13,13 @@ sources:
         columns:
           - name: addressid
             description: address id, PK
+            tests:
+              - unique
+              - not_null
           - name: stateprovinceid
             description: state province id
+            tests:
+              - not_null
           - name: addressline1
             description: address information
           - name: addressline2
@@ -30,6 +35,9 @@ sources:
         columns:
           - name: businessentityid
             description: business entity id
+            tests:
+              - unique
+              - not_null
           - name: modifieddate
             description: last modified date
       - name: businessentityaddress
@@ -37,8 +45,13 @@ sources:
         columns:
           - name: businessentityid
             description: business entity id
+            tests:
+              - not_null
           - name: addressid
             description: address id
+            tests:
+              - unique
+              - not_null
           - name: addresstypeid
             description: address type id
           - name: modifieddate
@@ -48,10 +61,17 @@ sources:
         columns:
           - name: businessentityid
             description: business entity id
+            tests:
+              - not_null
           - name: contacttypeid
             description: contact type id
+            tests:
+              - not_null
           - name: personid
             description: person id
+            tests:
+              - unique
+              - not_null
           - name: modifieddate
             description: last modified date
       - name: contacttype
@@ -59,6 +79,8 @@ sources:
         columns:
           - name: contacttypeid
             description: contact type id
+            tests:
+              - not_null
           - name: name
             description: contact type name
           - name: modifieddate
@@ -77,6 +99,8 @@ sources:
         columns:
           - name: businessentityid
             description: business entity id
+            tests:
+              - not_null
           - name: persontype
             description: person type
           - name: firstname
@@ -92,6 +116,8 @@ sources:
         columns:
           - name: stateprovinceid
             description: state province id
+            tests:
+              - not_null
           - name: stateprovincecode
             description: state province code
           - name: countryregioncode
@@ -100,6 +126,8 @@ sources:
             description: state province name
           - name: territoryid
             description: territory id
+            tests:
+              - not_null
           - name: modifieddate
             description: last modified date
   - name: raw_adventureworks_production
@@ -112,6 +140,9 @@ sources:
         columns:
           - name: productid
             description: product id
+            tests:
+              - unique
+              - not_null
           - name: name
             description: product name
           - name: productnumber
@@ -177,6 +208,9 @@ sources:
         columns:
           - name: creditcardid
             description: credit card id
+            tests:
+              - unique
+              - not_null
           - name: cardtype
             description: card type
           - name: cardnumber
@@ -192,6 +226,9 @@ sources:
         columns:
           - name: customerid
             description: customer id
+            tests:
+              - unique
+              - not_null
           - name: personid
             description: person id
           - name: storeid
@@ -211,6 +248,8 @@ sources:
             description: order quantity
           - name: productid
             description: product id
+            tests:
+              - not_null
           - name: unitprice
             description: unit price
           - name: specialofferid
@@ -224,6 +263,8 @@ sources:
         columns:
           - name: salesorderid
             description: sales order id
+            tests:
+              - not_null
           - name: orderdate
             description: order date
           - name: duedate
@@ -259,6 +300,8 @@ sources:
         columns:
           - name: salesorderid
             description: sales order id
+            tests:
+              - not_null
           - name: salesreasonid
             description: sales reason id
           - name: modifieddate
@@ -268,6 +311,8 @@ sources:
         columns:
           - name: businessentityid
             description: business entity id
+            tests:
+              - not_null
           - name: territoryid
             description: territory id
           - name: salesquota
@@ -287,6 +332,8 @@ sources:
         columns:
           - name: salesreasonid
             description: sales reason id
+            tests:
+              - not_null
           - name: name
             description: sales reason name
           - name: reasontype
@@ -298,10 +345,14 @@ sources:
         columns:
           - name: territoryid
             description: territory id
+            tests:
+              - not_null
           - name: name
             description: territory name
           - name: countryregioncode
             description: country region code
+          - name: group
+            description: region name
           - name: salesytd
             description: sales amount year-to-date
           - name: saleslastyear
@@ -315,6 +366,8 @@ sources:
         columns:
           - name: businessentityid
             description: business entity id
+            tests:
+              - not_null
           - name: name
             description: store name
           - name: salespersonid
