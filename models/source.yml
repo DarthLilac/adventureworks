@@ -254,7 +254,7 @@ sources:
             description: total due value
           - name: modifieddate
             description: last modified date
-      - name: salesorderheaderreason
+      - name: salesorderheadersalesreason
         description: sales order header reason information
         columns:
           - name: salesorderid

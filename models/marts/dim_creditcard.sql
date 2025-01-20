@@ -11,14 +11,14 @@ with
             , customer_id
             , sales_person_id
              , credit_card_id
-        from adventureworks_database.dev_andressa.stg_sales_salesorderheader
+        from {{ref('stg_sales_salesorderheader')}}
     )
 
     , credit_card as (
         select
             credit_card_id
             , card_type
-        from adventureworks_database.dev_andressa.stg_sales_creditcard
+        from {{ref('stg_sales_creditcard')}}
     )
 
     , final_table as (

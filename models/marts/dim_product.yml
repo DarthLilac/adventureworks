@@ -1,0 +1,24 @@
+version: 2
+
+models:
+  - name: dim_product
+    description: dimension table containing product information
+    columns:
+      - name: dim_product_sk
+        description: surrogate key generated using product_id
+      - name: product_id
+        description: product id
+      - name: product_name
+        description: product name
+      - name: product_category_id
+        description: product category id - defaulted to 0 if is null
+      - name: product_category_name
+        description: product category name - defaulted to 'not available' if is null
+      - name: product_subcategory_id
+        description: product subcategory id - defaulted to 0 if is null
+      - name: product_subcategory_name
+        description: product subcategory name - defaulted to 'not available' if is null
+      - name: product_model_id
+        description: product model id - defaulted to 0 if is null
+      - name: product_model_name
+        description: product model name - defaulted to 'not available' if is null
