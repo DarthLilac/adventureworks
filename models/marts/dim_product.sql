@@ -40,9 +40,9 @@ with
             {{ dbt_utils.generate_surrogate_key(['product.product_id']) }} as dim_product_sk
             , product.product_id
             , product.product_name
-            , COALESCE(product_subcategory.product_subcategory_id, 0) as product_subcategory_id
+            , coalesce(product_subcategory.product_subcategory_id, 0) as product_subcategory_id
             , product_category.product_category_name
-            , COALESCE(product_subcategory.product_subcategory_name, 'not available') as product_subcategory_name
+            , coalesce(product_subcategory.product_subcategory_name, 'not available') as product_subcategory_name
             from product
             left join product_subcategory on (product.product_subcategory_id = product_subcategory.product_subcategory_id)
             left join product_category on (product_category.product_category_id = product_category.product_category_id)
