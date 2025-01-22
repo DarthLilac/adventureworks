@@ -13,7 +13,7 @@ with
             , territoryid as territory_id
             , date (modifieddate) as modified_date
 
-        from adventureworks_database.raw_adventureworks_sales.customer
+        from {{ source('raw_adventureworks_sales','customer') }}
     )
 
 select *

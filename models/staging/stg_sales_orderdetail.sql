@@ -17,7 +17,7 @@ with
             , round ((unitprice-unitpricediscount)*order_qty, 2) as order_total_value
             , date (modifieddate) as modified_date
 
-        from adventureworks_database.raw_adventureworks_sales.salesorderdetail
+        from {{ source('raw_adventureworks_sales','salesorderdetail') }}
     )
 
 select *

@@ -14,7 +14,7 @@ with
             , lastname as last_name
             , date (modifieddate) as modified_date
 
-        from adventureworks_database.raw_adventureworks_person.person
+        from {{ source('raw_adventureworks_person','person') }}
     )
 
 select *

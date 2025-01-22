@@ -11,7 +11,7 @@ with
             , name as contact_type_name
             , date (modifieddate) as modified_date
 
-        from adventureworks_database.raw_adventureworks_person.contacttype
+        from {{ source('raw_adventureworks_person','contacttype') }}
     )
 
 select *

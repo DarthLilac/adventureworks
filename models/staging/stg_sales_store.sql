@@ -12,7 +12,7 @@ with
             , salespersonid as sales_person_id
             , date (modifieddate) as modified_date
 
-        from adventureworks_database.raw_adventureworks_sales.store
+        from {{ source('raw_adventureworks_sales','store') }}
     )
 
 select *

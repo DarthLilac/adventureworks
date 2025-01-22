@@ -3,8 +3,33 @@ version: 2
 
 sources:
 
+  - name: raw_adventureworks_humanresources
+    description: humanresources schema from adventureworks database, extract by Fivetran.
+    database: adventureworks_database
+    schema: raw_adventureworks_humanresources
+    tables:
+      - name: employee
+        description: employee information.
+        columns:
+          - name: businessentityid
+            description: business entity id
+            tests:
+              - unique
+              - not_null
+          - name: nationalidnumber
+            description: national id number
+            tests:
+              - not_null
+          - name: jobtitle
+            description: job title information
+          - name: birthdate
+            description: birth date
+          - name: gender
+            description: gender information
+          - name: modifieddate
+            description: last modified date
   - name: raw_adventureworks_person
-    description: Adventureworks database, extract by Fivetran.
+    description: person schema from adventureworks database, extract by Fivetran.
     database: adventureworks_database
     schema: raw_adventureworks_person
     tables:
@@ -13,9 +38,14 @@ sources:
         columns:
           - name: addressid
             description: address id, PK
+            tests:
+              - unique
+              - not_null
           - name: stateprovinceid
             description: state province id
-          - name: adressline1
+            tests:
+              - not_null
+          - name: addressline1
             description: address information
           - name: addressline2
             description: address complement
@@ -25,4 +55,349 @@ sources:
             description: postal code
           - name: modifieddate
             description: last modified date
-      - name: 
+      - name: businessentity
+        description: business entity id
+        columns:
+          - name: businessentityid
+            description: business entity id
+            tests:
+              - unique
+              - not_null
+          - name: modifieddate
+            description: last modified date
+      - name: businessentityaddress
+        description: business entity address
+        columns:
+          - name: businessentityid
+            description: business entity id
+            tests:
+              - not_null
+          - name: addressid
+            description: address id
+            tests:
+              - unique
+              - not_null
+          - name: addresstypeid
+            description: address type id
+          - name: modifieddate
+            description: last modified date
+      - name: businessentitycontact
+        description: business entity contact information
+        columns:
+          - name: businessentityid
+            description: business entity id
+            tests:
+              - not_null
+          - name: contacttypeid
+            description: contact type id
+            tests:
+              - not_null
+          - name: personid
+            description: person id
+            tests:
+              - unique
+              - not_null
+          - name: modifieddate
+            description: last modified date
+      - name: contacttype
+        description: business entity contact information
+        columns:
+          - name: contacttypeid
+            description: contact type id
+            tests:
+              - not_null
+          - name: name
+            description: contact type name
+          - name: modifieddate
+            description: last modified date
+      - name: countryregion
+        description: country region information
+        columns:
+          - name: countryregioncode
+            description: country region code
+          - name: name
+            description: country region name
+          - name: modifieddate
+            description: last modified date
+      - name: person
+        description: country region information
+        columns:
+          - name: businessentityid
+            description: business entity id
+            tests:
+              - not_null
+          - name: persontype
+            description: person type
+          - name: firstname
+            description: first name
+          - name: middlename
+            description: middle name
+          - name: lastname
+            description: last name
+          - name: modifieddate
+            description: last modified date
+      - name: stateprovince
+        description: state province information
+        columns:
+          - name: stateprovinceid
+            description: state province id
+            tests:
+              - not_null
+          - name: stateprovincecode
+            description: state province code
+          - name: countryregioncode
+            description: country region code
+          - name: name
+            description: state province name
+          - name: territoryid
+            description: territory id
+            tests:
+              - not_null
+          - name: modifieddate
+            description: last modified date
+  - name: raw_adventureworks_production
+    description: production schema from adventureworks database, extract by Fivetran.
+    database: adventureworks_database
+    schema: raw_adventureworks_production
+    tables:
+      - name: product
+        description: product information
+        columns:
+          - name: productid
+            description: product id
+            tests:
+              - unique
+              - not_null
+          - name: name
+            description: product name
+          - name: productnumber
+            description: product number
+          - name: safetystocklevel
+            description: safety stock level
+          - name: standardcost
+            description: standard cost
+          - name: listprice
+            description: list price
+          - name: color
+            description: product color
+          - name: size
+            description: product size
+          - name: sizeunitmeasurecode
+            description: size unit measure code
+          - name: weight
+            description: product weight
+          - name: weightunitmeasurecode
+            description: weight unit measure code
+          - name: daystomanufacture
+            description: days to manufacture
+          - name: productmodelid
+            description: product model id
+          - name: productsubcategoryid
+            description: product subcategory id
+          - name: modifieddate
+            description: last modified date
+      - name: productcategory
+        description: product category information
+        columns:
+          - name: productcategoryid
+            description: product category id
+          - name: name
+            description: product category name
+          - name: modifieddate
+            description: last modified date
+      - name: productmodel
+        description: product model information
+        columns:
+          - name: productmodelid
+            description: product model id
+          - name: name
+            description: product model name
+          - name: modifieddate
+            description: last modified date
+      - name: productsubcategory
+        description: product subcategory information
+        columns:
+          - name: productsubcategoryid
+            description: product subcategory id
+          - name: name
+            description: product subcategory name
+          - name: modifieddate
+            description: last modified date
+  - name: raw_adventureworks_sales
+    description: sales schema from adventureworks database, extract by Fivetran.
+    database: adventureworks_database
+    schema: raw_adventureworks_sales
+    tables:
+      - name: creditcard
+        description: credit card information
+        columns:
+          - name: creditcardid
+            description: credit card id
+            tests:
+              - unique
+              - not_null
+          - name: cardtype
+            description: card type
+          - name: cardnumber
+            description: card number
+          - name: expmonth
+            description: exp month
+          - name: expyear
+            description: expyear
+          - name: modifieddate
+            description: last modified date
+      - name: customer
+        description: customer information
+        columns:
+          - name: customerid
+            description: customer id
+            tests:
+              - unique
+              - not_null
+          - name: personid
+            description: person id
+          - name: storeid
+            description: store id
+          - name: territoryid
+            description: territory id
+          - name: modifieddate
+            description: last modified date
+      - name: salesorderdetail
+        description: sales order information
+        columns:
+          - name: salesorderdetailid
+            description: sales order detail id
+          - name: salesorderid
+            description: sales order id
+          - name: orderqty
+            description: order quantity
+          - name: productid
+            description: product id
+            tests:
+              - not_null
+          - name: unitprice
+            description: unit price
+          - name: specialofferid
+            description: special offer id
+          - name: unitpricediscount
+            description: unit price discount
+          - name: modifieddate
+            description: last modified date
+      - name: salesorderheader
+        description: sales order header information
+        columns:
+          - name: salesorderid
+            description: sales order id
+            tests:
+              - not_null
+          - name: orderdate
+            description: order date
+          - name: duedate
+            description: due date
+          - name: shipdate
+            description: ship date
+          - name: account number
+            description: account number
+          - name: customerid
+            description: customer id
+          - name: salespersonid
+            description: salesperson id - defaulted to 0 if is null
+          - name: billtoaddressid
+            description: bill to address id
+          - name: territoryid
+            description: territory id
+          - name: shiptoaddressid
+            description: ship to address id
+          - name: creditcardid
+            description: credit card id
+          - name: subtotal
+            description: subtotal
+          - name: taxamt
+            description: tax amt information
+          - name: freight
+            description: freight value
+          - name: total due
+            description: total due value
+          - name: modifieddate
+            description: last modified date
+      - name: salesorderheadersalesreason
+        description: sales order header reason information
+        columns:
+          - name: salesorderid
+            description: sales order id
+            tests:
+              - not_null
+          - name: salesreasonid
+            description: sales reason id
+          - name: modifieddate
+            description: last modified date
+      - name: salesperson
+        description: sales person information
+        columns:
+          - name: businessentityid
+            description: business entity id
+            tests:
+              - not_null
+          - name: territoryid
+            description: territory id
+          - name: salesquota
+            description: sales quota
+          - name: bonus
+            description: bonus amount
+          - name: commissionpct
+            description: commission percentage
+          - name: salesytd
+            description: sales amount year-to-date
+          - name: saleslastyear
+            description: sales amount in the previous year
+          - name: modifieddate
+            description: last modified date
+      - name: salesreason
+        description: customer purchase reasons
+        columns:
+          - name: salesreasonid
+            description: sales reason id
+            tests:
+              - not_null
+          - name: name
+            description: sales reason name
+          - name: reasontype
+            description: sales reason type
+          - name: modifieddate
+            description: last modified date
+      - name: salesterritory
+        description: sales territory information
+        columns:
+          - name: territoryid
+            description: territory id
+            tests:
+              - not_null
+          - name: name
+            description: territory name
+          - name: countryregioncode
+            description: country region code
+          - name: group
+            description: region name
+          - name: salesytd
+            description: sales amount year-to-date
+          - name: saleslastyear
+            description: sales amount in the previous year
+          - name: costytd
+            description: cost amount year-to-date
+          - name: modifieddate
+            description: last modified date
+      - name: store
+        description: store information
+        columns:
+          - name: businessentityid
+            description: business entity id
+            tests:
+              - not_null
+          - name: name
+            description: store name
+          - name: salespersonid
+            description: sales person id
+          - name: modifieddate
+            description: last modified date
+      
+      

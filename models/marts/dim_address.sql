@@ -12,7 +12,7 @@ with
             , complete_address
             , city
             , postal_code
-        from adventureworks_database.dev_andressa.stg_person_address
+        from {{ref('stg_person_address')}}
     )
 
     , stateprovince as (
@@ -22,7 +22,7 @@ with
             , country_region_code
             , stateprovince_name
             , territory_id
-        from adventureworks_database.dev_andressa.stg_person_stateprovince
+        from {{ref('stg_person_stateprovince')}}
     )
 
     , sales_territory as (
@@ -33,7 +33,7 @@ with
             , sales_ytd
             , sales_last_year
             , cost_ytd
-        from adventureworks_database.dev_andressa.stg_sales_salesterritory
+        from {{ref('stg_sales_salesterritory')}}
     )
 
     , final_table as (

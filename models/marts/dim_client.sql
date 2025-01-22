@@ -11,7 +11,7 @@ with
             , person_id
             , store_id
             , territory_id
-        from adventureworks_database.dev_andressa.stg_sales_customer  
+        from {{ref('stg_sales_customer')}}
     )
 
     , person as (
@@ -19,7 +19,7 @@ with
             businessentity_id
             , person_type
             , concat(first_name, ' ',coalesce(middle_name, ''), case when middle_name is null then '' else ' ' end,last_name) as complete_name
-        from adventureworks_database.dev_andressa.stg_person_person
+        from {{ref('stg_person_person')}}
     )
 
     , store as (
@@ -27,14 +27,14 @@ with
             businessentity_id
             , sales_person_id
             , store_name
-        from adventureworks_database.dev_andressa.stg_sales_store
+        from {{ref('stg_sales_store')}}
     )
 
     , territory as (
         select
             territory_id
             , territory_name
-        from adventureworks_database.dev_andressa.stg_sales_salesterritory
+        from {{ref('stg_sales_salesterritory')}}
     )
 
     , final_table as (
