@@ -3,6 +3,31 @@ version: 2
 
 sources:
 
+  - name: raw_adventureworks_humanresources
+    description: humanresources schema from adventureworks database, extract by Fivetran.
+    database: adventureworks_database
+    schema: raw_adventureworks_humanresources
+    tables:
+      - name: employee
+        description: employee information.
+        columns:
+          - name: businessentityid
+            description: business entity id
+            tests:
+              - unique
+              - not_null
+          - name: nationalidnumber
+            description: national id number
+            tests:
+              - not_null
+          - name: jobtitle
+            description: job title information
+          - name: birthdate
+            description: birth date
+          - name: gender
+            description: gender information
+          - name: modifieddate
+            description: last modified date
   - name: raw_adventureworks_person
     description: person schema from adventureworks database, extract by Fivetran.
     database: adventureworks_database
@@ -276,7 +301,7 @@ sources:
           - name: customerid
             description: customer id
           - name: salespersonid
-            description: salesperson id
+            description: salesperson id - defaulted to 0 if is null
           - name: billtoaddressid
             description: bill to address id
           - name: territoryid

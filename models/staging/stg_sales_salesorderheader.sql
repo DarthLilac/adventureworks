@@ -13,7 +13,7 @@ with
             , date (shipdate) as ship_date
             , accountnumber as account_number
             , customerid as customer_id
-            , salespersonid as sales_person_id
+            , coalesce(salespersonid, 0) as sales_person_id
             , billtoaddressid as bill_to_address_id
             , territoryid as territory_id
             , shiptoaddressid as ship_to_address_id

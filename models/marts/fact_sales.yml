@@ -1,0 +1,36 @@
+version: 2
+
+models:
+  - name: fact_sales
+    description: fact table containing sales information.
+    columns:
+      - name: sales_id
+        description: unique transaction identifier
+        tests:
+          - not_null
+      - name: order_id
+        description: transaction identifier
+        tests:
+          - not_null
+      - name: order_date
+        description: date of the sale
+        tests:
+          - not_null
+      - name: customer_id
+        description: customer identifier
+      - name: sales_person_id
+        description: salesperson identifier
+      - name: product_id
+        description: product identifier
+      - name: order_qty
+        description: quantity of products sold
+      - name: unit_price
+        description: unit price of the product
+      - name: freight
+        description: freight cost for the transaction
+      - name: tax_amount
+        description: tax amount applied
+      - name: total_sale
+        description: total sale value (order_qty * unit_price)
+      - name: reason_type
+        description: type of reason
