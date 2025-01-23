@@ -1,0 +1,19 @@
+version: 2
+
+models:
+
+  - name: dim_date
+    description: dimension date table
+    columns:
+      - name: metric_date
+        description: single date record
+      - name: day
+        description: day of metric_date
+      - name: month
+        description: month of metric_date
+      - name: year
+        description: year of metric_date
+      - name: quarter
+        description: quarter of metric_date
+      - name: fullmonth
+        description: full name of the month
