@@ -6,6 +6,9 @@ models:
     columns:
       - name: sales_order_id
         description: Unique identifier for each sales order (primary key).
+        tests:
+          - unique
+          - not_null
       - name: sales_person_id
         description: Unique identifier for the salesperson associated with the sales order.
       - name: order_date

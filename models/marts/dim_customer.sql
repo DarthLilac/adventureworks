@@ -24,7 +24,7 @@ with
 
     , store as (
         select
-            businessentity_id
+            store_id
             , sales_person_id
             , store_name
         from {{ref('stg_sales_store')}}
@@ -48,7 +48,7 @@ with
             , territory.territory_name
             from customer
             left join person on (customer.person_id = person.businessentity_id)
-            left join store on (customer.store_id = store.businessentity_id)
+            left join store on (customer.store_id = store.store_id)
             left join territory on (customer.territory_id = territory.territory_id)
             where customer.person_id is not null
             order by customer.customer_id asc

@@ -6,6 +6,9 @@ models:
     columns:
       - name: sales_person_id
         description: Unique identifier for the salesperson (primary key).
+        tests:
+          - unique
+          - not_null
       - name: sales_quota
         description: Sales quota assigned to the salesperson.
       - name: bonus

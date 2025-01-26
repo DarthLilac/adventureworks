@@ -6,6 +6,9 @@ models:
     columns:
       - name: product_id
         description: Unique identifier for the product (primary key). 
+        tests:
+          - unique
+          - not_null
       - name: product_name
         description: Name of the product.
       - name: product_category_id

@@ -7,7 +7,7 @@
 with
     salesperson as (
         select
-            sales_person_id
+            businessentity_id as sales_person_id
             , sales_quota
             , bonus
             , commission_pct

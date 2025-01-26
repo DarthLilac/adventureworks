@@ -6,6 +6,9 @@ models:
     columns:
       - name: address_id
         description: address id (primary key)
+        tests:
+          - unique
+          - not_null
       - name: complete_address
         description: complete address
       - name: city
