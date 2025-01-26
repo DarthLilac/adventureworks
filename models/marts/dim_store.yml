@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: dim_store
+    description: Dimension table containing store data with associated salesperson information.
+    columns:
+      - name: store_id
+        description: Unique identifier for the store (primary key).
+      - name: store_name
+        description: Name of the store.
+      - name: sales_person_id
+        description: Identifier for the salesperson associated with the store.

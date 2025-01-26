@@ -24,10 +24,10 @@ with
     , final_table as (
         select
             {{ dbt_utils.generate_surrogate_key(['sales_order_header.credit_card_id']) }} as dim_creditcard_sk
+            , coalesce(sales_order_header.credit_card_id, 0) as credit_card_id           
             , sales_order_header.sales_order_id
             , sales_order_header.customer_id
             , sales_order_header.sales_person_id
-            , coalesce(sales_order_header.credit_card_id, 0) as credit_card_id
             , coalesce(card_type, 'not available') as card_type
             from sales_order_header
             left join credit_card on (sales_order_header.credit_card_id = credit_card.credit_card_id)

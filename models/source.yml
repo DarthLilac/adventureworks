@@ -28,6 +28,7 @@ sources:
             description: gender information
           - name: modifieddate
             description: last modified date
+
   - name: raw_adventureworks_person
     description: person schema from adventureworks database, extract by Fivetran.
     database: adventureworks_database
@@ -55,6 +56,7 @@ sources:
             description: postal code
           - name: modifieddate
             description: last modified date
+
       - name: businessentity
         description: business entity id
         columns:
@@ -65,6 +67,7 @@ sources:
               - not_null
           - name: modifieddate
             description: last modified date
+
       - name: businessentityaddress
         description: business entity address
         columns:
@@ -81,6 +84,7 @@ sources:
             description: address type id
           - name: modifieddate
             description: last modified date
+
       - name: businessentitycontact
         description: business entity contact information
         columns:
@@ -99,6 +103,7 @@ sources:
               - not_null
           - name: modifieddate
             description: last modified date
+
       - name: contacttype
         description: business entity contact information
         columns:
@@ -110,6 +115,7 @@ sources:
             description: contact type name
           - name: modifieddate
             description: last modified date
+
       - name: countryregion
         description: country region information
         columns:
@@ -119,6 +125,7 @@ sources:
             description: country region name
           - name: modifieddate
             description: last modified date
+
       - name: person
         description: country region information
         columns:
@@ -136,6 +143,7 @@ sources:
             description: last name
           - name: modifieddate
             description: last modified date
+
       - name: stateprovince
         description: state province information
         columns:
@@ -155,6 +163,7 @@ sources:
               - not_null
           - name: modifieddate
             description: last modified date
+
   - name: raw_adventureworks_production
     description: production schema from adventureworks database, extract by Fivetran.
     database: adventureworks_database
@@ -196,6 +205,7 @@ sources:
             description: product subcategory id
           - name: modifieddate
             description: last modified date
+
       - name: productcategory
         description: product category information
         columns:
@@ -205,6 +215,7 @@ sources:
             description: product category name
           - name: modifieddate
             description: last modified date
+
       - name: productmodel
         description: product model information
         columns:
@@ -214,6 +225,7 @@ sources:
             description: product model name
           - name: modifieddate
             description: last modified date
+
       - name: productsubcategory
         description: product subcategory information
         columns:
@@ -223,6 +235,7 @@ sources:
             description: product subcategory name
           - name: modifieddate
             description: last modified date
+
   - name: raw_adventureworks_sales
     description: sales schema from adventureworks database, extract by Fivetran.
     database: adventureworks_database
@@ -246,6 +259,7 @@ sources:
             description: expyear
           - name: modifieddate
             description: last modified date
+
       - name: customer
         description: customer information
         columns:
@@ -262,6 +276,7 @@ sources:
             description: territory id
           - name: modifieddate
             description: last modified date
+
       - name: salesorderdetail
         description: sales order information
         columns:
@@ -283,6 +298,7 @@ sources:
             description: unit price discount
           - name: modifieddate
             description: last modified date
+
       - name: salesorderheader
         description: sales order header information
         columns:
@@ -320,6 +336,7 @@ sources:
             description: total due value
           - name: modifieddate
             description: last modified date
+
       - name: salesorderheadersalesreason
         description: sales order header reason information
         columns:
@@ -331,6 +348,7 @@ sources:
             description: sales reason id
           - name: modifieddate
             description: last modified date
+
       - name: salesperson
         description: sales person information
         columns:
@@ -352,6 +370,7 @@ sources:
             description: sales amount in the previous year
           - name: modifieddate
             description: last modified date
+
       - name: salesreason
         description: customer purchase reasons
         columns:
@@ -365,6 +384,7 @@ sources:
             description: sales reason type
           - name: modifieddate
             description: last modified date
+
       - name: salesterritory
         description: sales territory information
         columns:
@@ -386,6 +406,7 @@ sources:
             description: cost amount year-to-date
           - name: modifieddate
             description: last modified date
+            
       - name: store
         description: store information
         columns:

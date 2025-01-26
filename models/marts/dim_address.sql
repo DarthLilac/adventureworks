@@ -38,13 +38,13 @@ with
 
     , final_table as (
         select
-            {{ dbt_utils.generate_surrogate_key(['address_id']) }} as dim_territories_sk
-            , address.address_id
+            address.address_id
             , address.complete_address
             , address.city
             , address.stateprovince_id
             , stateprovince.stateprovince_name
             , stateprovince.stateprovince_code
+            , stateprovince.territory_id
             , sales_territory.territory_name
             , stateprovince.country_region_code
         from address

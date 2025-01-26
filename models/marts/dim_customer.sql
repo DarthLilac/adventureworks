@@ -39,12 +39,11 @@ with
 
     , final_table as (
         select
-            {{ dbt_utils.generate_surrogate_key(['customer.customer_id']) }} as dim_client_sk
-            , customer.customer_id
+            customer.customer_id
             , customer.person_id
             , person.complete_name
             , coalesce(customer.store_id, 0) as store_id
-            , coalesce(store.store_name, 'not available') as store_name
+            , coalesce(store.store_name, 'Online') as store_name
             , customer.territory_id
             , territory.territory_name
             from customer

@@ -6,13 +6,12 @@ models:
     columns:
       - name: dim_creditcard_sk
         description: surrogate key generated using credit_card_id
+      - name: credit_card_id
+        description: credit card id - defaulted to 0 if is null
       - name: sales_order_id
         description: sales order id
       - name: customer_id
         description: customer id
       - name: sales_person_id
-        description: sales person id
-      - name: credit_card_id
-        description: credit card id - defaulted to 0 if is null
       - name: card_type
         description: card type - defaulted to 'not available' if is null

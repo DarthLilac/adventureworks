@@ -2,35 +2,38 @@ version: 2
 
 models:
   - name: fact_sales
-    description: fact table containing sales information.
+    description: Fact table containing consolidated sales order data with product quantity, store information, and detailed sales metrics.
     columns:
-      - name: sales_id
-        description: unique transaction identifier
-        tests:
-          - not_null
-      - name: order_id
-        description: transaction identifier
+      - name: sales_order_id
+        description: Unique identifier for the sales order (primary key).
         tests:
           - not_null
       - name: order_date
-        description: date of the sale
+        description: Date when the order was placed.
         tests:
           - not_null
+          - type: date
       - name: customer_id
-        description: customer identifier
+        description: Identifier for the customer associated with the sales order.
       - name: sales_person_id
-        description: salesperson identifier
+        description: Identifier for the salesperson handling the order.
       - name: product_id
-        description: product identifier
-      - name: order_qty
-        description: quantity of products sold
+        description: Identifier for the product included in the sales order.
+      - name: product_quantity
+        description: Total quantity of products in the sales order.
       - name: unit_price
-        description: unit price of the product
+        description: Price per unit of the product in the sales order.
       - name: freight
-        description: freight cost for the transaction
+        description: Freight cost associated with the sales order.
       - name: tax_amount
-        description: tax amount applied
+        description: Tax amount applied to the sales order.
       - name: total_sale
-        description: total sale value (order_qty * unit_price)
+        description: Subtotal of the sales order (total before taxes and additional costs).
+      - name: gross_sale
+        description: Total amount due for the sales order, including all costs and taxes.
       - name: reason_type
-        description: type of reason
+        description: Reason type for the sales order (e.g., promotion, marketing, etc.).
+      - name: store_id
+        description: Identifier for the store where the order was placed. Defaults to 0 for online orders.
+      - name: store_name
+        description: Name of the store where the order was placed. Defaults to 'Online' for online orders.

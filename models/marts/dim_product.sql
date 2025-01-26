@@ -37,8 +37,7 @@ with
 
     , final_table as (
         select
-            {{ dbt_utils.generate_surrogate_key(['product.product_id']) }} as dim_product_sk
-            , product.product_id
+            product.product_id
             , product.product_name
             , coalesce(product_category.product_category_id, 0) as product_category_id
             , coalesce(product_category.product_category_name, 'not available') as product_category_name
@@ -54,7 +53,7 @@ with
 
      , dedup as (
         select *
-        , row_number() over (partition by final_table.dim_product_sk order by final_table.dim_product_sk) as dedup_index,
+        , row_number() over (partition by final_table.product_id order by final_table.product_id) as dedup_index,
         from final_table
     )
 

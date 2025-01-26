@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: agg_sales_by_region_salesperson
+    description: Aggregated sales data by region and salesperson.
+    columns:
+      - name: sales_order_id
+        description: Unique identifier for each sales order (primary key).
+      - name: sales_person_id
+        description: Unique identifier for the salesperson associated with the sales order.
+      - name: order_date
+        description: Date when the order was placed.
+      - name: total_sale
+        description: Total value of the sale (subtotal).
+      - name: country
+        description: Country of the sales order, derived from `country_region_code` or `territory_name`.
+      - name: region
+        description: Geographic region of the sale.
