@@ -106,7 +106,8 @@ with
             , unit_price
             , round (freight_fixed, 2) as freight
             , round (tax_fixed, 2) as tax_amt
-            , subtotal
+            , subtotal --total liquido
+            , total_due --total bruto
         from join_fixing_columns
     )
 
@@ -118,5 +119,12 @@ with
             left join int_reason on int_reason.sales_order_id = fixed_table.sales_order_id
 )
 
+, final_table as (
+    select *
+        , row_number() over (partition by sales_order_id, sales_orderdetail_id order by sales_order_id) as dedup_index
+    from union_reason
+)
+
 select * 
-from union_reason
+from final_table
+where dedup_index = 1

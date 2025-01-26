@@ -24,7 +24,7 @@ with
 
     , store as (
         select
-            businessentity_id
+            store_id
             , sales_person_id
             , store_name
         from {{ref('stg_sales_store')}}
@@ -39,17 +39,16 @@ with
 
     , final_table as (
         select
-            {{ dbt_utils.generate_surrogate_key(['customer.customer_id']) }} as dim_client_sk
-            , customer.customer_id
+            customer.customer_id
             , customer.person_id
             , person.complete_name
             , coalesce(customer.store_id, 0) as store_id
-            , coalesce(store.store_name, 'not available') as store_name
+            , coalesce(store.store_name, 'Online') as store_name
             , customer.territory_id
             , territory.territory_name
             from customer
             left join person on (customer.person_id = person.businessentity_id)
-            left join store on (customer.store_id = store.businessentity_id)
+            left join store on (customer.store_id = store.store_id)
             left join territory on (customer.territory_id = territory.territory_id)
             where customer.person_id is not null
             order by customer.customer_id asc
