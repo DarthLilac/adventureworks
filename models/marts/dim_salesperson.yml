@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: dim_salesperson
+    description: Dimension table containing salesperson data with sales performance metrics.
+    columns:
+      - name: sales_person_id
+        description: Unique identifier for the salesperson (primary key).
+        tests:
+          - unique
+          - not_null
+      - name: sales_quota
+        description: Sales quota assigned to the salesperson.
+      - name: bonus
+        description: Bonus amount earned by the salesperson.
+      - name: commission_pct
+        description: Commission percentage earned on sales.
+      - name: sales_ytd
+        description: Year-to-date sales achieved by the salesperson.
+      - name: sales_last_year
+        description: Total sales achieved by the salesperson in the previous year.

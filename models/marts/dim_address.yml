@@ -4,10 +4,11 @@ models:
   - name: dim_address
     description: dimension table containing address information
     columns:
-      - name: dim_client_sk
-        description: surrogate key generated using address_id
       - name: address_id
-        description: address id
+        description: address id (primary key)
+        tests:
+          - unique
+          - not_null
       - name: complete_address
         description: complete address
       - name: city
@@ -16,6 +17,8 @@ models:
         description: state province name
       - name: stateprovince_code
         description: state province code
+      - name: territory_id
+        description: territory id
       - name: territory_name
         description: territory name
       - name: country_region_code

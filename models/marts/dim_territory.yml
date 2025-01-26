@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: dim_territory
+    description: Dimension table with sales territory data with performance metrics and regional details.
+    columns:
+      - name: territory_id
+        description: Unique identifier for the sales territory (primary key).
+      - name: territory_name
+        description: Name of the sales territory.
+      - name: country_region_code
+        description: Code representing the country or region associated with the territory.
+      - name: region
+        description: Geographic region of the sales territory.
+      - name: sales_ytd
+        description: Year-to-date sales achieved in the territory.
+      - name: sales_last_year
+        description: Total sales achieved in the territory during the previous year.
+      - name: cost_ytd
+        description: Year-to-date costs incurred in the territory.
