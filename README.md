@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/DarthLilac/adventureworks">
-    <img src="img/adventureworks.png" alt="Logo" width="80" height="80">
+    <img src="adventureworks.png" alt="Logo" width="80" height="80">
   </a>
 
   <h1 align="center">Adventure Works Project</h1>
@@ -18,7 +18,7 @@
       <a href="#sobre-o-projeto">Sobre o Projeto</a>
       <ul>
         <li><a href="#ferramentas">Ferramentas Utilizadas</a></li>
-        <li><a href="#arquivos">Arquivos</a></li>
+        <li><a href="#entregas">Entregas</a></li>
       </ul>
     </li>
     <li>
@@ -60,7 +60,7 @@ Ferramentas utilizadas nas análises:
 </li>
 
 
-### Pasta de entregas:
+### Entregas:
 
 * Modelo conceitual do data warehouse
 * Dashboard operacional (aw_operacional.pbix)
