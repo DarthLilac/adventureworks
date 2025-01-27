@@ -8,9 +8,10 @@ with
     quantity as (
         select 
             sales_order_id
-            , sum(order_qty) as product_quantity
+            , product_id
+            , order_qty as product_quantity
         from {{ ref('stg_sales_orderdetail') }}
-        group by sales_order_id
+        --group by sales_order_id, product_id
 )
 
     , store as (
@@ -51,21 +52,21 @@ with
             , sales_data.total_sale
             , sales_data.gross_sale
             , sales_data.reason_type
-            , coalesce(store.store_id, 0) as store_id
-            , coalesce(store.store_name, 'Online') as store_name
+            --, store_id
+            --, store_name
         from sales_data
         left join quantity
-            on quantity.sales_order_id = sales_data.sales_order_id
-        left join store
-            on store.sales_person_id = sales_data.sales_person_id
+            on quantity.sales_order_id = sales_data.sales_order_id and quantity.product_id = sales_data.product_id
+        --left join store
+            --on store.sales_person_id = sales_data.sales_person_id
     )
 
     , dedup as (
         select *
-        , row_number() over (partition by final_table.sales_order_id order by final_table.sales_order_id) as dedup_index,
+        --, row_number() over (partition by final_table.sales_order_id order by final_table.sales_order_id) as dedup_index,
         from final_table
     )
 
     select *
     from dedup
-    where dedup_index = 1
+    --where dedup_index = 1
