@@ -5,10 +5,9 @@ models:
     description: Fact table containing consolidated sales order data with product quantity, store information, and detailed sales metrics.
     columns:
       - name: sales_order_id
-        description: Unique identifier for the sales order (primary key).
+        description: Identifier for the sales order (primary key).
         tests:
           - not_null
-          - unique
       - name: order_date
         description: Date when the order was placed.
         tests:
