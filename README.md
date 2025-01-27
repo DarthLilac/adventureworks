@@ -1,15 +1,76 @@
-Welcome to your new dbt project!
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/DarthLilac/adventureworks">
+    <img src="img/adventureworks.png" alt="Logo" width="80" height="80">
+  </a>
 
-### Using the starter project
+  <h1 align="center">Adventure Works Project</h1>
 
-Try running the following commands:
-- dbt run
-- dbt test
+  <p align="center">
+    A Adventure Works (AW), uma indústria de bicicletas em constante crescimento, busca se consolidar como uma empresa data-driven, utilizando seus dados estrategicamente para tomar decisões embasadas e ganhar vantagem competitiva. O projeto foi idealizado e patrocinado pelo diretor de inovação, João Muller, com apoio do CEO Carlos Silveira. 
+</div>
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Guia de Conteúdo</summary>
+  <ol>
+    <li>
+      <a href="#sobre-o-projeto">Sobre o Projeto</a>
+      <ul>
+        <li><a href="#ferramentas">Ferramentas Utilizadas</a></li>
+        <li><a href="#arquivos">Arquivos</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#desenvolvido-por">Desenvolvido por</a>
+      <ul>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+  </ol>
+</details>
+
+<!-- ABOUT THE PROJECT -->
+## Sobre o Projeto
+
+<p>
+O objetivo do projeto é desenvolver um Data Warehouse para centralizar e organizar os dados da Adventure Works, com foco inicial na área de vendas, e responder às principais perguntas estratégicas definidas pela diretoria. 
+  </p>
+
+### Ferramentas
+
+Ferramentas utilizadas nas análises:
+
+<li>
+      <a>Fivetran: utilizada para a extração</a>
+
+  <li>
+      <a>Snowflake: data warehouse escolhido</a>
+</li>
+  <li>
+      <a>dbt core: para transformações</a>
+</li>
+  <li>
+      <a>Airflow: para orquestração</a>
+</li>
+  <li>
+      <a>Power BI: para visualizações</a>
+</li>
+  <li>
+      <a>Python: para análises avançadas</a>
+</li>
 
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+### Pasta de entregas:
+
+* Modelo conceitual do data warehouse
+* Dashboard operacional (aw_operacional.pbix)
+* Relatório executivo (aw_executivo.pbix)
+* Notebook com as análises preditivas (aw_demand_forecast.ipynb)
+* Relatório do projeto
+
+### Desenvolvido por:
+
+Andressa Lourenço da Rocha
+
+### Contato
+[linkedin](https://www.linkedin.com/in/andressa-lourenco-da-rocha/)
