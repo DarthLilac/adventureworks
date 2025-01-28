@@ -62,11 +62,11 @@ Ferramentas utilizadas nas análises:
 
 ### Entregas:
 
-* Modelo conceitual do data warehouse
+* Modelo conceitual do data warehouse (aw_modelo_conceitual.pdf)
 * Dashboard operacional (aw_operacional.pbix)
 * Relatório executivo (aw_executivo.pbix)
 * Notebook com as análises preditivas (aw_demand_forecast.ipynb)
-* Relatório do projeto
+* Relatório do projeto (aw_relatorio_andressa_rocha.pdf)
 
 ### Desenvolvido por:
 
